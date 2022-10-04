@@ -1,0 +1,34 @@
+language: php
+
+php:
+  - 5.6
+  - 5.5
+
+sudo: false
+
+addons:
+  apt:
+    packages:
+      - libcairo2-dev
+      - libfreetype6-dev
+      - fontconfig
+    
+env: 
+  - REPORT_EXIT_STATUS=1 NO_INTERACTION=1 SHOW_ONLY_GROUPS="FAIL,XFAIL,BORK,WARN,LEAK,SKIP"
+
+install:
+  - phpize
+  - ./configure
+  - make
+
+script: 
+  - TESTS="--show-diff" make test
+
+notifications:
+  irc:
+    channels:
+      - "chat.freenode.net#gtkforphp"
+    on_success: change
+    on_failure: always
+    use_notice: true
+    skip_join: true
