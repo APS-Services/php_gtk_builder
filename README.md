@@ -72,7 +72,7 @@ run in the windows-sdk-shell:
 
     cd c:\php_gtk_builder\php-sdk\php56\vc11\x86\php-src
     buildconf --force && 
-    configure --with-mp=8 --with-gd --enable-cli --disable-zts --enable-cli-win32 --with-cairo=shared --disable-cgi --with-mysqli --disable-ipv6 --disable-phar --with-dom --with-mcrypt --enable-soap --with-openssl --enable-sockets --enable-mbstring --enable-printer --with-curl  --disable-calendar --disable-com-dotnet --disable-ctype  --disable-filter --disable-ftp --without-t1lib --without-libvpx --disable-mbregex-backtrack  --disable-odbc  --disable-session    --disable-tokenizer    --without-wddx   --disable-xmlwriter   --disable-xmlreader   --without-xml --enable-debug --enable-crt-debug
+    configure --with-mp=8 --with-gd --enable-cli --disable-zts --enable-cli-win32 --with-cairo=shared --disable-cgi --with-mysqli --disable-ipv6 --disable-phar --with-dom --with-mcrypt --enable-soap --with-openssl --enable-sockets --enable-mbstring --enable-printer --with-curl  --disable-calendar --disable-ctype  --disable-filter --disable-ftp --without-t1lib --without-libvpx --disable-mbregex-backtrack  --disable-odbc  --disable-session    --disable-tokenizer    --without-wddx   --disable-xmlwriter   --disable-xmlreader --enable-debug --enable-crt-debug
 
     
 
