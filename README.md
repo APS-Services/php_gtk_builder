@@ -79,10 +79,10 @@ run in the windows-sdk-shell:
     nmake
 
 #### 13)
-Copy `php_cairo.dll` from `C:\php-sdk\php54\vc9\x86\php-5.4.10-src\Release` to
-    `C:\php-sdk\php54\vc9\x86\php-5.4.10-src\Release\ext`
+Copy `php_cairo.dll` from `C:\php_gtk_builder\php-sdk\php56\vc11\x86\Release` to
+    `C:\php_gtk_builder\php-sdk\php56\vc11\x86\Release\ext`
 
-copy the following files from `C:\php_gtk_builder\gtk\bin` to `C:\php-sdk\php54\vc9\x86\php-5.4.10-src\Release`
+copy the following files from `C:\php_gtk_builder\gtk\bin` to `C:\php_gtk_builder\php-sdk\php56\vc11\x86\Release`
 
     freetype6.dll
     libcairo-2.dll
@@ -93,11 +93,11 @@ copy the following files from `C:\php_gtk_builder\gtk\bin` to `C:\php-sdk\php54\
        
 #### 13)
 Copy `ssleay32.dll`,`libssh2.dll`  and `libeay32.dll` from `C:\php_gtk_builder\php-sdk\php56\vc11\x86\deps\bin` to
-    `C:\php-sdk\php54\vc9\x86\php-5.4.10-src\Release`
+    `C:\php_gtk_builder\php-sdk\php56\vc11\x86\Release`
 
 
 #### 14)
-Create a `php.ini` in `C:\php-sdk\php54\vc9\x86\php-5.4.10-src\Release` with 
+Create a `php.ini` in `C:\php_gtk_builder\php-sdk\php56\vc11\x86\Release` with 
 the following content:
 
     extension_dir=.\ext
@@ -107,7 +107,7 @@ the following content:
 #### 15)
 test the newly built PHP
 
-    cd C:\php-sdk\php54\vc9\x86\php-5.4.10-src\Release
+    cd C:\php_gtk_builder\php-sdk\php56\vc11\x86\Release
     php -v
     php -m
 
@@ -121,32 +121,29 @@ get `grep` and `sed` for windows (for example:
 and put them in the `PATH` (ex. `c:\windows`)
 
 #### 17)
-extract php-gtk sources to `c:\php-gtk` (I used 
+extract php-gtk sources to `C:\php_gtk_builder\php-gtk` (I used 
 [https://github.com/auroraeosrose/php-gtk-src](https://github.com/auroraeosrose/php-gtk-src)
 commit: e972b2524a)
                 
 #### 18)
-We need a `php.exe`, so add `C:\php-sdk\php54\vc9\x86\php-5.4.10-src\Release` to 
+We need a `php.exe`, so add `C:\php_gtk_builder\php-sdk\php56\vc11\x86\Release` to 
 `PATH` in `"C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools"\vsvars32.bat`
 
 #### 19)
-In  `"C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\vsvars32.bat`
+In  `"C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\vsvars32.bat"`
 
-    add to INCLUDE  C:\php-sdk\php54\vc9\x86\php-5.4.10-src
-    add to INCLUDE  C:\php-sdk\php54\vc9\x86\deps\include
-    add to LIB      C:\php-sdk\php54\vc9\x86\php-5.4.10-src\Release
-    add to LIB      C:\php-sdk\php54\vc9\x86\deps\lib
-
-#### 20)
-    mkdir c:\php_build
+    add to INCLUDE  C:\php_gtk_builder\php-sdk\php56\vc11\x86\php-src
+    add to INCLUDE  C:\php_gtk_builder\php-sdk\php56\vc11\x86\deps\include
+    add to LIB      C:\php_gtk_builder\php-sdk\php56\vc11\x86\php-src\Release
+    add to LIB      C:\php_gtk_builder\php-sdk\php56\vc11\x86\deps\lib
 
 #### 21)
 extract
 [http://www.php.net/extra/win32build.zip](http://www.php.net/extra/win32build.zip)
-into `c:\php_build`
+into `C:\php_gtk_builder\win32build`
                               
 #### 22)
-copy from `c:\gtk` to `c:\php_build`
+copy from `C:\php_gtk_builder\gtk` to `C:\php_gtk_builder\win32build`
 
     include\cairo                     -> include\cairo
     include\gtk-2.0\*                 -> include\*
@@ -168,7 +165,7 @@ copy
     c:\php_build\lib\gtk-2.0\include\*    -> c:\php_build\include\*
 
 #### 24)
-In  `C:\Program Files\Microsoft Visual Studio 9.0\Common7\Tools\vsvars32.bat`
+In  `C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\vsvars32.bat`
 
     add to INCLUDE  C:\php_build\include
     add to LIB      C:\php_build\lib
@@ -181,22 +178,22 @@ to `c:\php_build\include`
 
 #### 26)
 copy `php_cairo_api.h` and  `php_cairo.h` 
-from `C:\php-sdk\php54\vc9\x86\php-5.4.10-src\ext\cairo` to `c:\php_build\include`
+from `C:\php_gtk_builder\php-sdk\php56\vc11\x86\php-src\ext\cairo` to `C:\php_gtk_builder\win32build\include`
 
 #### 27)
 run in the windows-sdk-shell:
 
-    cd C:\php-gtk
+    cd C:\php_gtk_builder\php-gtk
     buildconf
-    configure --with-php-build=..\php_build --disable-zts --enable-gd
+    configure --with-php-build=..\win32build --disable-zts --enable-gd
     nmake
 
 #### 28)
-copy `C:\php-gtk\Release\php_gtk2.dll` to
-`C:\php-sdk\php54\vc9\x86\php-5.4.10-src\Release\ext\php_gtk2.dll`
+copy `C:\php_gtk_builder\php-gtk\Release\php_gtk2.dll` to
+`C:\php_gtk_builder\php-sdk\php56\vc11\x86\php-src\Release\ext\php_gtk2.dll`
 
 copy the following files from `C:\php_gtk_builder\gtk\bin`
-to `C:\php-sdk\php54\vc9\x86\php-5.4.10-src\Release`
+to `C:\php_gtk_builder\php-sdk\php56\vc11\x86\php-src\Release`
 
     libgtk-win32-2.0-0.dll
     libgdk-win32-2.0-0.dll
@@ -214,14 +211,14 @@ to `C:\php-sdk\php54\vc9\x86\php-5.4.10-src\Release`
     libatk-1.0-0.dll
 
 #### 29)
-add the following line to `C:\php-sdk\php54\vc9\x86\php-5.4.10-src\Release\php.ini`
+add the following line to `C:\php_gtk_builder\php-sdk\php56\vc11\x86\php-src\Release\php.ini`
 
     extension=php_gtk2.dll 
 
 #### 30)
 verify that the extension is loaded
 
-    cd C:\php-sdk\php54\vc9\x86\php-5.4.10-src\Release
+    cd C:\php_gtk_builder\php-sdk\php56\vc11\x86\php-src\Release
     php -m
 
 

@@ -39,7 +39,8 @@
 @set PATH=%FrameworkDir%%Framework35Version%;%PATH%
 @set PATH=%FrameworkDir%%FrameworkVersion%;%PATH%
 @set PATH=%VSINSTALLDIR%Common7\Tools;%PATH%
-@set PATH=C:\php_gtk_builder\php5\php56\vc11\x86\php-src\Release;%PATH%
+@rem set PATH=C:\php_gtk_builder\php-sdk\php56\vc11\x86\php-src\Release;%PATH%
+@set PATH=C:\php_gtk_builder\php-sdk\php56\vc11\x86\php-src\Debug;%PATH%
 @if exist "%VCINSTALLDIR%BIN" set PATH=%VCINSTALLDIR%BIN;%PATH%
 @set PATH=%DevEnvDir%;%PATH%
 
@@ -59,16 +60,16 @@
 @rem -------
 @if exist "%VCINSTALLDIR%ATLMFC\INCLUDE" set INCLUDE=%VCINSTALLDIR%ATLMFC\INCLUDE;%INCLUDE%
 @if exist "%VCINSTALLDIR%INCLUDE" set INCLUDE=%VCINSTALLDIR%INCLUDE;%INCLUDE%
-@set INCLUDE=C:\php_gtk_builder\php5\php56\vc11\x86\php-src;%INCLUDE%
-@set INCLUDE=C:\php_gtk_builder\php5\php56\vc11\x86\deps\include;%INCLUDE%
+@set INCLUDE=C:\php_gtk_builder\php-sdk\php56\vc11\x86\php-src;%INCLUDE%
+@set INCLUDE=C:\php_gtk_builder\php-sdk\php56\vc11\x86\deps\include;%INCLUDE%
 @set INCLUDE=C:\php_gtk_builder\win32build\include;%INCLUDE%
 
 @rem LIB
 @rem ---
 @if exist "%VCINSTALLDIR%ATLMFC\LIB" set LIB=%VCINSTALLDIR%ATLMFC\LIB;%LIB%
 @if exist "%VCINSTALLDIR%LIB" set LIB=%VCINSTALLDIR%LIB;%LIB%
-@set LIB=C:\php_gtk_builder\php5\php56\vc11\x86\php-src\Release;%LIB%
-@set LIB=C:\php_gtk_builder\php5\php56\vc11\x86\deps\lib;%LIB%
+@set LIB=C:\php_gtk_builder\php-sdk\php56\vc11\x86\php-src\Release;%LIB%
+@set LIB=C:\php_gtk_builder\php-sdk\php56\vc11\x86\deps\lib;%LIB%
 @set LIB=C:\php_gtk_builder\win32build\lib;%LIB%
 
 @rem LIBPATH
